@@ -4,31 +4,31 @@ Decimal8 = Decimal.clone({ precision:8, rounding:8 });
 var currencyUnits = [
 	{
 		type:"native",
-		name:"BTC",
+		name:"RNG",
 		multiplier:1,
 		default:true,
-		values:["", "btc", "BTC"],
+		values:["", "rng", "BTC"],
 		decimalPlaces:8
 	},
 	{
 		type:"native",
-		name:"mBTC",
+		name:"mRNG",
 		multiplier:1000,
 		values:["mbtc"],
 		decimalPlaces:5
 	},
 	{
 		type:"native",
-		name:"bits",
+		name:"rits",
 		multiplier:1000000,
 		values:["bits"],
 		decimalPlaces:2
 	},
 	{
 		type:"native",
-		name:"sat",
+		name:"rat",
 		multiplier:100000000,
-		values:["sat", "satoshi"],
+		values:["ringsat", "satoshi"],
 		decimalPlaces:0
 	},
 	{
@@ -50,33 +50,33 @@ var currencyUnits = [
 ];
 
 module.exports = {
-	name:"Bitcoin",
-	ticker:"BTC",
-	logoUrl:"/img/logo/btc.svg",
-	siteTitle:"Bitcoin Explorer",
-	siteDescriptionHtml:"<b>BTC Explorer</b> is <a href='https://github.com/janoside/btc-rpc-explorer). If you run your own [Bitcoin Full Node](https://bitcoin.org/en/full-node), **BTC Explorer** can easily run alongside it, communicating via RPC calls. See the project [ReadMe](https://github.com/janoside/btc-rpc-explorer) for a list of features and instructions for running.",
-	nodeTitle:"Bitcoin Full Node",
-	nodeUrl:"https://bitcoin.org/en/full-node",
-	demoSiteUrl: "https://btc.chaintools.io",
+	name:"Ring",
+	ticker:"RNG",
+	logoUrl:"/img/logo/ringicon.png",
+	siteTitle:"Ring Coin Explorer",
+	siteDescriptionHtml:"<b>RNG Explorer</b> is <a href='https://github.com/janoside/btc-rpc-explorer). If you run your own [Ring Full Node](https://ringcoin.tech), **Ring Explorer** can easily run alongside it, communicating via RPC calls. See the project [ReadMe](https://github.com/janoside/btc-rpc-explorer) for a list of features and instructions for running.",
+	nodeTitle:"Ring Full Node",
+	//nodeUrl:"https://bitcoin.org/en/full-node",
+	//demoSiteUrl: "https://btc.chaintools.io",
 	miningPoolsConfigUrls:[
 		"https://raw.githubusercontent.com/btccom/Blockchain-Known-Pools/master/pools.json",
 		"https://raw.githubusercontent.com/blockchain/Blockchain-Known-Pools/master/pools.json"
 	],
 	maxBlockWeight: 4000000,
-	targetBlockTimeSeconds: 600,
+	targetBlockTimeSeconds: 30,
 	currencyUnits:currencyUnits,
-	currencyUnitsByName:{"BTC":currencyUnits[0], "mBTC":currencyUnits[1], "bits":currencyUnits[2], "sat":currencyUnits[3]},
+	currencyUnitsByName:{"RNG":currencyUnits[0], "mRNG":currencyUnits[1], "rits":currencyUnits[2], "ringsat":currencyUnits[3]},
 	baseCurrencyUnit:currencyUnits[3],
 	defaultCurrencyUnit:currencyUnits[0],
 	feeSatoshiPerByteBucketMaxima: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100, 150],
 	genesisBlockHashesByNetwork:{
 		"main":    "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
-		"test":    "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943",
+		"test":    "b61b8461ebb55edad92a0f733df0734fb0b6593a6abe6d97b4fc1d24be46e416",
 		"regtest": "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"
 	},
 	genesisCoinbaseTransactionIdsByNetwork: {
 		"main":    "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
-		"test":    "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+		"test":    "68a1b35cbd59f83b6e462281a703b58fdecb5e436cf82653720b55ea6852dc97",
 		"regtest": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b"
 	},
 	genesisCoinbaseTransactionsByNetwork:{
@@ -96,7 +96,7 @@ module.exports = {
 			],
 			"vout": [
 				{
-					"value": 50,
+					"value": 0.2,
 					"n": 0,
 					"scriptPubKey": {
 						"asm": "04f5eeb2b10c944c6b9fbcfff94c35bdeecd93df977882babc7f3a2cf7f5c81d3b09a68db7f0e04f21de5d4230e75e6dbe7ad16eefe0d4325a62067dc6f369446a OP_CHECKSIG",
@@ -114,13 +114,13 @@ module.exports = {
 			"blocktime": 1230988505
 		},
 		"test": {
-			"hex": "01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff4d04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73ffffffff0100f2052a01000000434104678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5fac00000000",
-			"txid": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
-			"hash": "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+			"hex": "00000001",
+			"txid": "68a1b35cbd59f83b6e462281a703b58fdecb5e436cf82653720b55ea6852dc97",
+			"hash": "b61b8461ebb55edad92a0f733df0734fb0b6593a6abe6d97b4fc1d24be46e416",
 			"version": 1,
-			"size": 204,
+			"size": 1420,
 			"vsize": 204,
-			"weight": 816,
+			"weight": 5680,
 			"locktime": 0,
 			"vin": [
 				{
@@ -130,7 +130,7 @@ module.exports = {
 			],
 			"vout": [
 				{
-					"value": 50.00000000,
+					"value": 0.20000000,
 					"n": 0,
 					"scriptPubKey": {
 						"asm": "04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f OP_CHECKSIG",
@@ -182,11 +182,11 @@ module.exports = {
 	historicalData: [
 		{
 			type: "blockheight",
-			date: "2009-01-03",
+			date: "2020-16-02",
 			chain: "main",
 			blockHeight: 0,
-			blockHash: "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
-			summary: "The Bitcoin Genesis Block.",
+			blockHash: "b61b8461ebb55edad92a0f733df0734fb0b6593a6abe6d97b4fc1d24be46e416",
+			summary: "The Ring Genesis Block.",
 			alertBodyHtml: "This is the first block in the Bitcoin blockchain, known as the 'Genesis Block'. This block was mined by Bitcoin's creator Satoshi Nakamoto. You can read more about <a href='https://en.bitcoin.it/wiki/Genesis_block'>the genesis block</a>.",
 			referenceUrl: "https://en.bitcoin.it/wiki/Genesis_block"
 		},
@@ -323,16 +323,16 @@ module.exports = {
 			date: "2011-02-02",
 			chain: "test",
 			blockHeight: 0,
-			blockHash: "000000000933ea01ad0ee984209779baaec3ced90fa3f408719526f8d77f4943",
-			summary: "The Bitcoin (regtest) Genesis Block.",
-			alertBodyHtml: "This is the first block in the Bitcoin blockchain, known as the 'Genesis Block'. You can read more about <a href='https://en.bitcoin.it/wiki/Genesis_block'>the genesis block</a>.",
-			referenceUrl: "https://en.bitcoin.it/wiki/Genesis_block"
+			blockHash: "b61b8461ebb55edad92a0f733df0734fb0b6593a6abe6d97b4fc1d24be46e416",
+			summary: "The Ring (testnet) Genesis Block.",
+			alertBodyHtml: "This is the first block in the Ring blockchain, known as the 'Genesis Block'. You can read more about <a href='https://en.bitcoin.it/wiki/Genesis_block'>the genesis block</a>.",
+			referenceUrl: "https://ringcoin.tech"
 		},
 		{
 			type: "tx",
 			date: "2011-02-02",
 			chain: "test",
-			txid: "4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b",
+			txid: "68a1b35cbd59f83b6e462281a703b58fdecb5e436cf82653720b55ea6852dc97",
 			summary: "The coinbase transaction of the Genesis Block.",
 			alertBodyHtml: "This transaction doesn't really exist! This is the coinbase transaction of the <a href='/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f'>Bitcoin Genesis Block</a>. For more background about this special-case transaction, you can read <a href='https://github.com/bitcoin/bitcoin/issues/3303'>this brief discussion</a> among some of the <a href='https://bitcoin.org'>Bitcoin</a> developers.",
 			referenceUrl: "https://github.com/bitcoin/bitcoin/issues/3303"
@@ -383,7 +383,7 @@ module.exports = {
 		}
 	},
 	blockRewardFunction:function(blockHeight, chain) {
-		var eras = [ new Decimal8(50) ];
+		var eras = [ new Decimal8(0.2) ];
 		for (var i = 1; i < 34; i++) {
 			var previous = eras[i - 1];
 			eras.push(new Decimal8(previous).dividedBy(2));
