@@ -1,4 +1,4 @@
-Note:  Make sure to change the default RPC configs in your local enviroment.  
+Note:  Make sure to change the default RPC configs/passwords to something different in your local enviroment.  
 
 # BTC RPC Explorer
 
