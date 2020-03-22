@@ -1,3 +1,5 @@
+Note:  Make sure to change the default RPC configs in your local enviroment.  
+
 # BTC RPC Explorer
 
 [![npm version][npm-ver-img]][npm-ver-url] [![NPM downloads][npm-dl-img]][npm-dl-url]
